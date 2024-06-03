@@ -1,5 +1,11 @@
 # ARAI-MVSNet
-PyTorch implement of our paper.
+The current project page provides [pytorch](https://pytorch.org/get-started/locally/) code that implements the following paper.
+
+Title: "ARAI-MVSNet: A multi-view stereo depth estimation network with adaptive depth range and depth interval'
+
+Abstract:
+
+Abstract Multi-View Stereo (MVS) is a fundamental problem in geometric computer vision which aims to reconstruct a scene using multi-view images with known camera parameters. However, the mainstream approaches represent the scene with a fixed all-pixel depth range and equal depth interval partition, which will result in inadequate utilization of depth planes and imprecise depth estimation. In this paper, we present a novel multi-stage coarse-to-fine framework to achieve adaptive all-pixel depth range and depth interval. We predict a coarse depth map in the first stage, then an Adaptive Depth Range Prediction module is proposed in the second stage to zoom in the scene by leveraging the reference image and the obtained depth map in the first stage and predict a more accurate all-pixel depth range for the following stages. In the third and fourth stages, we propose an Adaptive Depth Interval Adjustment module to achieve adaptive variable interval partition for pixel-wise depth range. The depth interval distribution in this module is normalized by Z-score, which can allocate dense depth hypothesis planes around the potential ground truth depth value and vice versa to achieve more accurate depth estimation. Extensive experiments on four widely used benchmark datasets (DTU, TnT, BlendedMVS, ETH 3D) demonstrate that our model achieves state-of-the-art performance and yields competitive generalization ability. Particularly, our method achieves the highest Acc and Overall on the DTU dataset, while attaining the highest Recall and F 1-score on the Tanks and Temples intermediate and advanced dataset. Moreover, our method also achieves the lowest e 1 and e 3 on the BlendedMVS dataset and the highest Acc and F 1-score on the ETH 3D dataset, surpassing all listed methods.
 
 ## Installation
 
@@ -61,4 +67,18 @@ And then use the DTU_Evaluations's code to evaluate the reconstruction results.
 ```
 1. run BaseEvalMain_web.m
 2. run ComputeStat_web.m
+```
+
+## Citation
+If you find our work useful in your research, please consider citing:
+```
+@article{zhang2023arai,
+  title={ARAI-MVSNet: A multi-view stereo depth estimation network with adaptive depth range and depth interval},
+  author={Zhang, Song and Xu, Wenjia and Wei, Zhiwei and Zhang, Lili and Wang, Yang and Liu, Junyi},
+  journal={Pattern Recognition},
+  volume={144},
+  pages={109885},
+  year={2023},
+  publisher={Elsevier}
+}
 ```
